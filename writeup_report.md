@@ -95,7 +95,7 @@ The final model architecture (model.py lines 91-111) consisted of the following 
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. 
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to 
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover if gets off center. 
 
 Then I recorded one lap of driving in the reverse direction.
 
