@@ -48,6 +48,7 @@ Overall the model consists of;
 * 5 dense or fully connected layers
 
 ####2. Attempts to reduce overfitting in the model
+
 To check if the model was overfitting, I monitored the training loss and validaton loss as the epochs progressed. I did not see any signs of overfitting.
 
 To further improve the model, I increased the size of the training set two times, each time adding more data to the training and validation sets.
