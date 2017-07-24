@@ -41,11 +41,11 @@ The model.py file contains the code for training and saving the convolution neur
 
 I started from the LeNet architecture, and modified the filter depths to start with. After that I added a few more layers.
 Overall the model consists of;
-a. cropping layer to crop the top part of images
-b. lambda layer used for scaling and centering of the image pixel values 
-c. four conv2d layers, each followed by a 2x2 strided maxpooling layer
-d. a flatten layer
-e. 5 dense or fully connected layers
+* cropping layer to crop the top part of images
+* lambda layer used for scaling and centering of the image pixel values 
+* four conv2d layers, each followed by a 2x2 strided maxpooling layer
+* a flatten layer
+* 5 dense or fully connected layers
 
 ####2. Attempts to reduce overfitting in the model
 To check if the model was overfitting, I monitored the training loss and validaton loss as the epochs progressed. I did not see any signs of overfitting.
@@ -84,11 +84,11 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 91-111) consisted of the following layers and sizes:
 
-a. cropping layer to crop the top part of images
-b. lambda layer used for scaling and centering of the image pixel values 
-c. four conv2d layers (sizes - 5x5x6, 5x5x16, 3x3x32, 3x3x48), each followed by a 2x2 strided maxpooling layer
-d. a flatten layer
-e. 5 dense or fully connected layers (sizes - 1164, 100, 50, 10, 1)
+* cropping layer to crop the top part of images
+* lambda layer used for scaling and centering of the image pixel values 
+* four conv2d layers (sizes - 5x5x6, 5x5x16, 3x3x32, 3x3x48), each followed by a 2x2 strided maxpooling layer
+* a flatten layer
+* 5 dense or fully connected layers (sizes - 1164, 100, 50, 10, 1)
 
 ####3. Creation of the Training Set & Training Process
 
@@ -100,8 +100,8 @@ Then I recorded one lap of driving in the reverse direction.
 
 To augment the data sat, I also flipped images and angles thinking that this would help with training the model to steer in the right direction, as most of the turns were towards the left.
 
-After the collection process, I had X number of data points. 
+After the collection process, I had 6417 number of data points. Using all the three images, i.e. left, center, and right, and also augmenting the images using flipping, brings the total number of images to 6417 * 3 * 2 = 38502.
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 5 as evidenced by convergence of the validation loss. I used an adam optimizer so that manually training the learning rate wasn't necessary.
