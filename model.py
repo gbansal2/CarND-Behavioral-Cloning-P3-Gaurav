@@ -58,6 +58,7 @@ def generator(samples, batch_size=32):
                 measurement = steering_right
                 measurements.append(measurement)
 
+
             # The images are augmented by flipping each image and adding to the training set
             augmented_images, augmented_measurements = [], []
             for image,measurement in zip(images,measurements):
@@ -70,8 +71,30 @@ def generator(samples, batch_size=32):
             y_train = np.array(augmented_measurements)
             yield sklearn.utils.shuffle(X_train, y_train)
 
-#plt.imshow(X_train[0])
-#plt.show()
+#plots
+left_image = mpimg.imread('p3-data-23/IMG/left_2017_07_22_15_51_00_995.jpg')
+center_image = mpimg.imread('p3-data-23/IMG/center_2017_07_22_15_51_00_995.jpg')
+right_image = mpimg.imread('p3-data-23/IMG/right_2017_07_22_15_51_00_995.jpg')
+plt.figure(1)
+plt.subplot(131)
+plt.imshow(left_image)
+plt.subplot(132)
+plt.imshow(center_image)
+plt.subplot(133)
+plt.imshow(right_image)
+plt.show()
+plt.savefig('left_right_center.png')
+
+
+plt.figure(2)
+plt.subplot(121)
+plt.imshow(center_image)
+plt.subplot(122)
+plt.imshow(cv2.flip(center_image,1))
+plt.show()
+plt.savefig('center_flipped.png')
+
+
 
 train_generator = generator(train_samples, batch_size=32)
 validation_generator = generator(validation_samples, batch_size=32)
@@ -111,24 +134,24 @@ model.add(Dense(10))
 model.add(Dense(1))
 
 #We use the mean-square-error loss function and Adam optimizer
-model.compile(loss='mse', optimizer='adam')
-#model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=5)
-history_object = model.fit_generator(train_generator, steps_per_epoch=len(train_samples)/32
-        , validation_data = validation_generator, validation_steps = len(validation_samples)/32,
-        epochs=5, verbose=1)
+#model.compile(loss='mse', optimizer='adam')
+##model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=5)
+#history_object = model.fit_generator(train_generator, steps_per_epoch=len(train_samples)/32
+#        , validation_data = validation_generator, validation_steps = len(validation_samples)/32,
+#        epochs=5, verbose=1)
 
-model.save('model.h5')
+#model.save('model.h5')
 
-print(history_object.history.keys())
+#print(history_object.history.keys())
 
 #The code below plots the history of convergence of the model
-plt.plot(history_object.history['loss'])
-plt.plot(history_object.history['val_loss'])
-plt.title('model mean squared error loss')
-plt.ylabel('mean squared error loss')
-plt.xlabel('epoch')
-plt.legend(['training set', 'validation set'], loc='upper right')
-plt.show()
+#plt.plot(history_object.history['loss'])
+#plt.plot(history_object.history['val_loss'])
+#plt.title('model mean squared error loss')
+#plt.ylabel('mean squared error loss')
+#plt.xlabel('epoch')
+#plt.legend(['training set', 'validation set'], loc='upper right')
+#plt.show()
 
 
 
