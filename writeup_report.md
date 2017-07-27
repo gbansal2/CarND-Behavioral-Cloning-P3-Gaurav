@@ -103,6 +103,8 @@ The final model architecture (model.py lines 91-111) consisted of the following 
 * a flatten layer
 * 5 dense or fully connected layers (sizes - 1164, 100, 50, 10, 1)
 
+I initially had tried to use ReLU layers inbetween the convolution layers to add non-linearity to the model. However, I could not get good convergence. Removing ReLU layers resulted in lower validation loss. 
+
 ####3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. 
