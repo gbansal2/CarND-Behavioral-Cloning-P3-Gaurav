@@ -82,8 +82,8 @@ plt.subplot(132)
 plt.imshow(center_image)
 plt.subplot(133)
 plt.imshow(right_image)
-plt.show()
 plt.savefig('left_right_center.png')
+plt.show()
 
 
 plt.figure(2)
@@ -91,8 +91,8 @@ plt.subplot(121)
 plt.imshow(center_image)
 plt.subplot(122)
 plt.imshow(cv2.flip(center_image,1))
-plt.show()
 plt.savefig('center_flipped.png')
+plt.show()
 
 
 
