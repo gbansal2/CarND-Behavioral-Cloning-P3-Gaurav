@@ -9,8 +9,11 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
+[image1]: ./left_right_center.png
+
 
 ## Rubric Points
+
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
@@ -62,6 +65,10 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 ####4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving (2-3 laps), recovering from the left and right sides of the road, and also did one lap of driving in the reverse direction.  
+
+A set of sample images is shown below, for left, center, and right camera angles.
+
+![image1]
 
 Further, I also used all the three camera images, i.e. left, center, and right images. I corrected the steering angle corresponding to left and right images. 
 
