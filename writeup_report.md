@@ -9,7 +9,7 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[image1]: ./left_center_right.png
+[image1]: ./left_right_center.png
 
 
 ## Rubric Points
