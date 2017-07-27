@@ -48,6 +48,7 @@ Overall the model consists of;
 * 5 dense or fully connected layers
 
 ####2. Attempts to reduce overfitting in the model
+
 To check if the model was overfitting, I monitored the training loss and validaton loss as the epochs progressed. I did not see any signs of overfitting.
 
 To further improve the model, I increased the size of the training set two times, each time adding more data to the training and validation sets.
@@ -94,7 +95,7 @@ The final model architecture (model.py lines 91-111) consisted of the following 
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. 
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to 
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to recover if gets off center. 
 
 Then I recorded one lap of driving in the reverse direction.
 
