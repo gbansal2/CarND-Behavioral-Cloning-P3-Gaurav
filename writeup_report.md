@@ -9,7 +9,8 @@ The goals / steps of this project are the following:
 
 
 [//]: # (Image References)
-[image1]: ./left_right_center.png
+[image1]: ./left_right_center2.png
+[image2]: ./center_flipped2.png
 
 
 ## Rubric Points
@@ -73,6 +74,10 @@ A set of sample images is shown below, for left, center, and right camera angles
 Further, I also used all the three camera images, i.e. left, center, and right images. I corrected the steering angle corresponding to left and right images. 
 
 The training set was finally augmented by adding flipped image for each image in the set. 
+
+An example of an image and corresponding flipped image is shown below.
+
+![image2]
 
 ###Model Architecture and Training Strategy
 
